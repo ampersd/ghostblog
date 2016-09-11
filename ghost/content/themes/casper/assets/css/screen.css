@@ -2225,3 +2225,152 @@ body:not(.post-template) .post-title {
    End of file. Animations should be the last thing here. Do not add stuff
    below this point, or it will probably fuck everything up.
    ========================================================================== */
+
+
+   .reading-time-indicator {
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100%;
+       background-color: rgba(255,255,255,0.9);
+       color: #000;
+       z-index: 9999;
+       -webkit-transform: translate3d(0, -200%, 0);
+       -ms-transform: translate3d(0, -200%, 0);
+       transform: translate3d(0, -200%, 0);
+       -webkit-transition: transform .5s;
+       -ms-transition: transform .5s;
+       transition: transform .5s
+   }
+
+   @media screen and (min-width: 48em) {
+       .reading-time-indicator {
+           top:0.9375rem;
+           left: 0.9375rem;
+           width: calc(100% - 30px);
+       }
+   }
+
+   .reading-time-indicator.visible {
+       -webkit-transform: translate3d(0, 0, 0);
+       -ms-transform: translate3d(0, 0, 0);
+       transform: translate3d(0, 0, 0)
+   }
+
+   .reading-time-indicator .post-reading-time {
+       width: 100%;
+       position: relative;
+       background-color: rgba(0,0,0,0.02);
+       height: 3.75rem;
+       overflow-y: hidden
+   }
+
+   .reading-time-indicator .post-reading-time .percent {
+       position: absolute;
+       top: 0;
+       right: 0;
+       width: auto;
+       height: 3.75rem;
+       line-height: 3.75rem;
+       opacity: .5;
+       font-size: 1.25rem;
+       font-weight: 600;
+       padding-right: 0.9375rem;
+       font-family: 'Source Sans Pro',sans-serif;
+       color: #000
+   }
+
+   .reading-time-indicator .post-reading-time .read-estimation {
+       position: absolute;
+       top: 0;
+       left: 0;
+       z-index: 1050;
+       color: #000;
+       padding: 0 0.9375rem;
+       height: 3.75rem;
+       vertical-align: middle;
+       display: table
+   }
+
+   .reading-time-indicator .post-reading-time .read-estimation .reading-time-blog-logo {
+       width: 3.75rem;
+       display: table-cell;
+       vertical-align: middle;
+       text-align: center
+   }
+
+   .reading-time-indicator .post-reading-time .read-estimation .reading-time-blog-logo .fa {
+       font-size: 2.25rem;
+       color: #000;
+       padding-top: 0.3125rem
+   }
+
+   .reading-time-indicator .post-reading-time .read-estimation .read-estimation-content {
+       display: table-cell;
+       background-color: transparent;
+       vertical-align: middle;
+       margin-bottom: 0;
+       padding-left: 0.9375rem
+   }
+
+   .reading-time-indicator .post-reading-time .read-estimation .read-estimation-content .title {
+       font-weight: 400;
+       font-family: 'Source Sans Pro',sans-serif;
+       line-height: 1.1;
+       font-size: 1rem;
+       font-weight: 600
+   }
+
+   .reading-time-indicator .post-reading-time .read-estimation .read-estimation-content .estimated-time {
+       font-weight: 300;
+       opacity: .6;
+       font-family: 'Source Sans Pro',sans-serif;
+       /*font-size: 0.875rem*/
+   }
+
+   .reading-time-indicator .post-reading-time .read-progress-indicator {
+       width: 100%;
+       height: 3.75rem;
+       -webkit-appearance: none;
+       -moz-appearance: none;
+       appearance: none;
+       border: none;
+       background-color: transparent;
+       color: rgba(0,0,0,0.05)
+   }
+
+   .reading-time-indicator .post-reading-time .read-progress-indicator::-webkit-progress-bar {
+       background-color: transparent
+   }
+
+   .reading-time-indicator .post-reading-time .read-progress-indicator.single::-ms-fill {
+       border: 0
+   }
+
+   .reading-time-indicator .post-reading-time .read-progress-indicator.single::-webkit-progress-value {
+       background-color: rgba(0,0,0,0.05)
+   }
+
+   .reading-time-indicator .post-reading-time .read-progress-indicator.single::-moz-progress-bar {
+       background-color: rgba(0,0,0,0.05)
+   }
+
+   .reading-time-indicator .post-reading-time .progress-container {
+       width: 100%;
+       background-color: transparent;
+       position: absolute;
+       top: 0;
+       left: 0;
+       height: 5rem;
+       display: block;
+       -webkit-transform: translateZ(0);
+       transform: translateZ(0);
+       overflow-x: hidden
+   }
+
+   .reading-time-indicator .post-reading-time .progress-container .progress-bar {
+       background-color: #f4f4f4;
+       width: 100%;
+       height: 100%;
+       display: block
+   }

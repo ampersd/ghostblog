@@ -24,10 +24,10 @@
                 <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
             </section>
         </header>
-        
-        <div class="reading-time"></div>
+
 
         <section class="post-content">
+            <div class="eta"></div>
             {{content}}
         </section>
 
@@ -100,15 +100,14 @@
             */
             (function() {  // DON'T EDIT BELOW THIS LINE
                 var d = document, s = d.createElement('script');
-                
+
                 s.src = '//ampersd.disqus.com/embed.js';
-                
+
                 s.setAttribute('data-timestamp', +new Date());
                 (d.head || d.body).appendChild(s);
             })();
         </script>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-        
 
     </article>
 </main>
